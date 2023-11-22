@@ -1,23 +1,27 @@
 import {Coin} from './Coin'
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {useFrame} from 'react-three-fiber';
+import { useSpring, animated } from '@react-spring/three'
 
 export const Experiance = () => {
 
-    const cameraRef = useRef();
+    const myMesh = useRef();
+    const [active, setActive] = useState(false);
 
-    useFrame(() => {
-        cameraRef.current.position.z += 0.01;
+    const springs = useSpring({ 
+        scale: active ? 1.5 : 1 
+    })
+
+    useFrame(({ clock }) => {
+        const a = clock.getElapsedTime();
+        myMesh.current.rotation.y = a;
       });
   
     return (
         <>
-        <perspectiveCamera ref={cameraRef} position={[0, 0, 0]} />
-        <mesh position={[0, -1, 3]}>
-            
-                <Coin />
-    
-        </mesh>
+        <animated.mesh scale={springs.scale} onClick={() => setActive(!active)} ref={myMesh}>
+            <Coin />
+        </animated.mesh>
         </>
     )
 }
