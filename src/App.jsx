@@ -21,15 +21,14 @@ function App() {
     <>
       <div className='bg-slate-300 overflow-hidden h-screen'>
         <div className='flex justify-center items-center flex-col z-10 relative'>
-          <h1 className='text-3xl font-bold flex justify-center text-center mb-56 font-mono'>
+          <h1 className='text-3xl font-bold flex justify-center text-center mb-4 font-mono'>
             Want to flip a coin? <br />
             Do it.
           </h1>
 
-          <Canvas>
-            <Experiance />
-          </Canvas>
-
+        <Canvas>
+          <Experiance />
+        </Canvas>
 
           <div className='mb-4'>
             <p className='text-2xl font-mono'>
@@ -37,14 +36,12 @@ function App() {
             </p>
           </div>
 
-          <button
-            onClick={handleClick}
-            className="text-2xl font-bold border border-solid border-black px-4 py-1 rounded-2xl font-mono"
-          >
+          <button onClick={handleClick} className="text-2xl font-bold border border-solid border-black px-4 py-1 rounded-2xl font-mono">
             {'Click me'}
           </button>
         </div>
 
+      
         {/*
 
         {buttonClicked && (
@@ -59,12 +56,6 @@ function App() {
 
             */}
 
-        <div className='left-0 bottom-0 opacity-50'>
-          <h1>
-            This work  is based on "1 Euro Coin" (https://sketchfab.com/3d-models/1-euro-coin-992424bd87714a29bcd4c58940e05ded) <br />
-            by korkigames (https://sketchfab.com/korkigames) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
-          </h1>
-        </div>
       </div>
     </>
   );
