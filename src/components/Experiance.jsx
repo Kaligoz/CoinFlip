@@ -13,8 +13,11 @@ export const Experiance = () => {
     })
 
     useFrame(({ clock }) => {
-        const a = clock.getElapsedTime();
-        myMesh.current.rotation.y = a;
+        const x = clock.getElapsedTime();
+        myMesh.current.rotation.x = x;
+
+        const y = Math.sin(clock.getElapsedTime()); 
+        myMesh.current.position.y = y;
       });
   
     return (
