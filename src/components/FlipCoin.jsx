@@ -6,6 +6,7 @@ const FlipCoin = () => {
   const handleClick = () => {
     const a = Math.floor(Math.random() * 2);
     setDisplayText(a === 1 ? "heads" : "tails");
+    console.log(a)
     setCoinResult(a);
   };
 
